@@ -36,6 +36,7 @@ export function Resolver(
       target,
       getObjectType,
       isAbstract: options.isAbstract || false,
+      namespace: options.namespace || target.name,
     });
   };
 }

@@ -55,4 +55,5 @@ export type MethodAndPropDecorator = PropertyDecorator & MethodDecorator;
 
 export interface ResolverClassOptions {
   isAbstract?: boolean;
+  namespace?: string;
 }

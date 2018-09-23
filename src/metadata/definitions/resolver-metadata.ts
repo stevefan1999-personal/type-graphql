@@ -49,4 +49,5 @@ export interface ResolverClassMetadata {
   getObjectType: ClassTypeResolver;
   isAbstract?: boolean;
   superResolver?: ResolverClassMetadata;
+  namespace?: string;
 }

@@ -88,11 +88,11 @@ export abstract class SchemaGenerator {
       const processMetadata = (type: nameTransformerTypes, ...resolvers: any[]) => {
         for (const metadata of resolvers) {
           if (!metadata.tainted) {
-            metadata.schemaName = options.nameTransformer!(
-              metadata.schemaName,
-              type,
-              metadata.target,
-            );
+            const { resolverClassMetadata } = metadata;
+            const namespace = resolverClassMetadata
+              ? resolverClassMetadata.namespace
+              : metadata.target.name;
+            metadata.schemaName = options.nameTransformer!(metadata.schemaName, type, namespace);
           }
         }
       };
